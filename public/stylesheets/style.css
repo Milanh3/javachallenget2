@@ -1,0 +1,125 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+select {
+  margin: 0px;
+  padding: 0px;
+  width: 200px;
+}
+
+.noPadding {
+  margin: 0px;
+  padding: 0px;
+}
+
+.darkBG {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}
+
+.lightBG {
+  background-color: #CEB64A;
+  color: #FFFFFF;
+}
+
+.whiteBG {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus,
+.btn-primary:active:focus {
+  background-color: #CEB64A;
+  color: #FFFFFF;
+  border-color: #CEB64A;
+}
+
+.btn-success,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:visited,
+.btn-success:focus,
+.btn-success:active:focus {
+  background-color: #A2CD5A;
+  color: #FFFFFF;
+  border-color: #A2CD5A;
+}
+
+a {
+  color: #CEB64A;
+  cursor: pointer;
+}
+
+a:hover,
+a:active,
+a:focus,
+a:active:focus {
+  color: #CEB64A;
+  text-decoration: underline;
+}
+
+a.danger {
+  color: red;
+}
+
+a.navigatie {
+  color: #FFFFFF;
+  border: none !important;
+  border-radius: 0px !important;
+  background-color: #1E1E1E;
+  font-weight: bold;
+}
+
+a.navigatie:hover,
+a.navigatie:active,
+a.navigatie:focus,
+a.navigatie:active:focus {
+  color: #CEB64A;
+  background-color: #1E1E1E !important;
+}
+
+a.noDesign,
+a.noDesign:hover,
+a.noDesign:active,
+a.noDesign:focus,
+a.noDesign:active:focus {
+  background-color: #CEB64A;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.spacing {
+  margin-bottom: 20px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+ul, ol, li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.clearfix li {
+  display: inline;
+  margin: 0px 20px;
+}
+
+a .fa,
+a .fa:hover,
+a .fa:active,
+a .fa:focus {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}

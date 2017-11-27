@@ -1,0 +1,34 @@
+<div class="row whiteBG">
+    <div class="col-md-10 col-sm-offset-1">
+        <table class="table">
+            <thead>
+                <th><a i18n (click)="sortByRoom()">Zaal</a></th>
+                <th><a i18n (click)="sortByUser()">Gebruiker</a></th>
+                <th><a i18n (click)="sortBy('start')">Van</a></th>
+                <th><a i18n (click)="sortBy('end')">Tot</a></th>
+                <th><a i18n (click)="sortBy('accepted')">Geaccepteerd</a></th>
+                <th><a i18n (click)="sortBy('paid')">Betaald</a></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of reservations; let i = index;">
+                    <!--<td>{{ x.reservationId }}</td>-->
+                    <td>{{ rooms[x.roomId] }}</td>
+                    <td>{{ users[i] }}</td>
+                    <!--<td>{{ users[x.userId] }}</td>-->
+                    <td>{{ x.start | date:"dd/MM/yyyy HH:mm" }}</td>
+                    <td>{{ x.end | date:"dd/MM/yyyy HH:mm" }}</td>
+                    <td (click)="toggleAccept(x.reservationId)">
+                        <i class="fa fa-check" aria-hidden="true" [ngClass]="{faded:!x.accepted}">
+                        </i>
+                    </td>
+                    <td (click)="togglePaid(x.reservationId)" >
+                        <i class="fa fa-check" aria-hidden="true" [ngClass]="{faded:!x.paid}"></i>
+                    </td>
+                    <td (click)="remove(x.reservationId)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

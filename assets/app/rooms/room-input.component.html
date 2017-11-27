@@ -1,0 +1,88 @@
+<form #f="ngForm" ngNativeValidate>
+    <div class="form-group">
+        <label for="name" i18n>Naam</label>
+        <input type="text" id="name" class="form-control" [ngModel]="room?.name" name="name" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="length" i18n>Lengte</label>
+        <input type="number" id="length" class="form-control" [ngModel]="room?.length" name="length" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="width" i18n>Breedte</label>
+        <input type="number" id="width" class="form-control" [ngModel]="room?.length" name="width" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="capacity" i18n>Capaciteit</label>
+        <input type="number" id="capacity" class="form-control" [ngModel]="room?.capacity" name="capacity" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="location" i18n>Plaats</label>
+        <input type="text" id="location" class="form-control" [ngModel]="room?.location" name="location" required/>
+    </div>
+
+    <div class="form-group">
+        <p>
+            <label for="facilities" i18n>Faciliteiten</label>
+            <button class="btn btn-success" (click)="addFacility()" i18n>Voeg faciliteit toe</button>
+        </p>
+
+        <ul id="facilities">
+            <li *ngFor="let facility of facilities">{{ facility }} <button class="btn btn-danger" (click)="deleteFacility(facility)" i18n>Verwijder</button></li>
+        </ul>
+    </div>
+
+    <div class="form-group" *ngIf="checkClickFacility()">
+        <div class="form-group">
+            <label for="facility" i18n>Vul een faciliteit in</label>
+            <input type="text" id="facility" class="form-control" [ngModel]="facility" name="facility"/>
+        </div>
+
+        <div>
+            <button class="btn btn-success" type="submit" (click)="onSubmitFacility(f)" i18n>Opslaan</button>
+            <button class="btn btn-warning" (click)="onCancelFacility(f)" i18n>Annuleren</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>
+            <label for="linkedRooms" i18n>Gelinkte zalen</label>
+            <button class="btn btn-success" (click)="addRoom()" i18n>Voeg zaal toe</button>
+        </p>
+
+        <ul id="linkedRooms">
+            <li *ngFor="let linkedRoom of linkedRooms">{{ linkedRoom.name }} <button class="btn btn-danger" (click)="deleteRoom(linkedRoom)" i18n>Verwijder</button></li>
+        </ul>
+    </div>
+
+    <div class="form-group" *ngIf="checkClickRoom()">
+        <div class="form-group">
+            <label for="linkedRoom" i18n>Kies een zaal</label>
+            <select id="linkedRoom" class="form-control inline" [ngModel]="linkedRoom?.roomId" name="linkedRoom">
+                <option *ngFor="let lr of rooms" [value]="lr.roomId">{{ lr.name }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="linkedRoomRequired" class="checkbox-inline">
+                <input type="checkbox" id="linkedRoomRequired" class="" [ngModel]="check" name="linkedRoomRequired"/>
+                Is de gelinkte zaal de grote zaal?
+            </label>
+        </div>
+
+
+        <div>
+            <button class="btn btn-success" type="submit" (click)="onSubmitRoom(f)" i18n>Opslaan</button>
+            <button class="btn btn-warning" (click)="onCancelRoom(f)" i18n>Annuleren</button>
+        </div>
+    </div>
+
+    <div class="buttongroup">
+        <button class="btn btn-success" [disabled]="!f.valid" type="submit" (click)="onSubmit(f)">Opslaan</button>
+        <button class="btn btn-warning" (click)="onCancel(f)">Annuleren</button>
+        <button class="btn btn-danger pull-right" (click)="onDelete(f)">Verwijderen</button>
+    </div>
+</form>

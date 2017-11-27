@@ -1,0 +1,32 @@
+<div class="row whiteBG">
+    <div class="col-md-10 col-sm-offset-1">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="firstName" i18n>Voornaam</label>
+                <input type="text" id="firstName" class="form-control" formControlName="firstName">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName" i18n>Familienaam</label>
+                <input type="text" id="lastName" class="form-control" formControlName="lastName">
+            </div>
+
+            <div class="form-group">
+                <label for="email" i18n>E-mail</label>
+                <input type="email" id="email" class="form-control" formControlName="email">
+            </div>
+
+            <div class="form-group">
+                <label for="telephone" i18n>Telefoonnummer</label>
+                <input type="text" id="telephone" class="form-control" formControlName="telephone">
+            </div>
+
+            <div class="form-group">
+                <label for="password" i18n>Wachtwoord</label>
+                <input type="password" id="password" class="form-control" formControlName="password">
+            </div>
+
+            <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid" i18n>Registreer</button>
+        </form>
+    </div>
+</div>

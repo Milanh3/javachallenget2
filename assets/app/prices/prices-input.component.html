@@ -1,0 +1,23 @@
+<div id="pricecontent">
+    <form #f="ngForm" ngNativeValidate *ngIf="checkIfRoom()">
+        <div class="form-group">
+            <label for="priceVzw" i18n>Prijs voor vzw:</label>
+            <input type="number" id="priceVzw" class="form-control" [ngModel]="prijs" name="priceVzw" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="priceLid" i18n>Prijs voor lid:</label>
+            <input type="number" id="priceLid" class="form-control" [ngModel]="prijs" name="priceLid" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="priceBedrijf" i18n>Prijs voor bedrijf:</label>
+            <input type="number" id="priceBedrijf" class="form-control" [ngModel]="prijs" name="priceBedrijf" required/>
+        </div>
+
+        <div class="buttongroup">
+            <button class="btn btn-success" [disabled]="!f.valid" type="submit" (click)="onSubmit(f)">Opslaan</button>
+            <button class="btn btn-warning" (click)="onCancel(f)">Annuleren</button>
+        </div>
+    </form>
+</div>
